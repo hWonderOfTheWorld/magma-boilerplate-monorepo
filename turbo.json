@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "dapp-contracts#build": {
+      "outputs": [ "index.ts", "index.js", "typechain/**" ]
+    },
+    "dapp#build": {
+      "dependsOn": ["dapp-contracts#build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "dev": {
+      "dependsOn": ["dapp-contracts#build"],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

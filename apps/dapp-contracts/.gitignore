@@ -1,0 +1,30 @@
+# General Node
+node_modules
+.env
+
+# VSCode Solidity Plugin
+bin
+
+# Hardhat
+cache
+
+# sourcify
+failing_metadata
+
+# Graph protocol
+generated
+build
+
+# tenderly
+tenderly.yaml
+
+# SolCover
+coverage/
+coverage.json
+
+/index.ts
+/index.js
+
+typechain/
+artifacts/
+deployments/localhost

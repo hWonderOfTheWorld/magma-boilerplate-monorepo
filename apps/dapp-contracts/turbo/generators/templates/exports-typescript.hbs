@@ -1,0 +1,9 @@
+// Export typechain information
+export * as typechain from './typechain';
+
+// Export ABI/Compiled information
+
+{{#each contractArtifacts }}
+export const {{ first this }} = {{{ second this }}} as const;
+
+{{/each}}
